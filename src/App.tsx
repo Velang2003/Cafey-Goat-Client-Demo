@@ -14,7 +14,8 @@ import {
 } from "lucide-react";
 import { Button, Eyebrow, TextLink, Wordmark } from "./components";
 import { menuItems, reviews, type MenuCategory } from "./data";
-import entranceImage from "./assets/cafey-goat-entrance.jpg";
+
+const EntranceImage = new URL("./assets/EntranceImage.jpg", import.meta.url).href;
 
 const categories: Array<"All" | MenuCategory> = ["All", "Coffee", "All-day", "Savoury", "Sweet"];
 
@@ -113,7 +114,7 @@ function App() {
             <img
               alt="The warm, plant-lined entrance to Cafey Goat"
               className="hero-image"
-              src={entranceImage}
+              src={EntranceImage}
             />
             <div className="rating-card">
               <div className="rating-stars" aria-label="4.8 out of 5 stars">
