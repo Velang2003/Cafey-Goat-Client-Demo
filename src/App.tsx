@@ -114,7 +114,8 @@ function App() {
             <img
               alt="The warm, plant-lined entrance to Cafey Goat"
               className="hero-image"
-              src={EntranceImage}
+              src="https://media.githubusercontent.com/media/Velang2003/Cafey-Goat-Client-Demo/main/src/assets/EntranceImage.jpg"
+              loading="lazy"
             />
             <div className="rating-card">
               <div className="rating-stars" aria-label="4.8 out of 5 stars">
