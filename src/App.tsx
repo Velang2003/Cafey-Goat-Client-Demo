@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button, Eyebrow, TextLink, Wordmark } from "./components";
 import { menuItems, reviews, type MenuCategory } from "./data";
+import entranceImage from "./assets/cafey-goat-entrance.jpg";
 
 const categories: Array<"All" | MenuCategory> = ["All", "Coffee", "All-day", "Savoury", "Sweet"];
 
@@ -43,17 +44,35 @@ function App() {
         <a aria-label="Cafey Goat home" className="brand-link" href="#top">
           <Wordmark />
         </a>
-        <nav aria-label="Main navigation" className={`nav${menuOpen ? " nav--open" : ""}`}>
-          <a href="#menu" onClick={() => setMenuOpen(false)}>Menu</a>
-          <a href="#story" onClick={() => setMenuOpen(false)}>Our story</a>
-          <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
-          <a href="#visit" onClick={() => setMenuOpen(false)}>Visit</a>
+        <nav
+          aria-label="Main navigation"
+          className={`nav${menuOpen ? " nav--open" : ""}`}
+        >
+          <a href="#menu" onClick={() => setMenuOpen(false)}>
+            Menu
+          </a>
+          <a href="#story" onClick={() => setMenuOpen(false)}>
+            Our story
+          </a>
+          <a href="#reviews" onClick={() => setMenuOpen(false)}>
+            Reviews
+          </a>
+          <a href="#visit" onClick={() => setMenuOpen(false)}>
+            Visit
+          </a>
         </nav>
         <div className="header-actions">
-          <Button className="desktop-action" onClick={() => showComingSoon("Table booking")} variant="ghost">
+          <Button
+            className="desktop-action"
+            onClick={() => showComingSoon("Table booking")}
+            variant="ghost"
+          >
             Book a table
           </Button>
-          <Button className="desktop-action" onClick={() => showComingSoon("Online ordering")}>
+          <Button
+            className="desktop-action"
+            onClick={() => showComingSoon("Online ordering")}
+          >
             Order online
           </Button>
           <button
@@ -72,10 +91,14 @@ function App() {
         <section className="hero" id="top">
           <div className="hero-copy">
             <Eyebrow light>Your neighbrew-hood coffee spot</Eyebrow>
-            <h1>Good coffee.<br />Better company.</h1>
+            <h1>
+              Good coffee.
+              <br />
+              Better company.
+            </h1>
             <p>
-              Specialty coffee, honest plates, and unhurried moments in the heart of
-              Dollars Colony.
+              Specialty coffee, honest plates, and unhurried moments in the
+              heart of Dollars Colony.
             </p>
             <div className="hero-actions">
               <Button href="#menu" variant="light">
@@ -90,7 +113,7 @@ function App() {
             <img
               alt="The warm, plant-lined entrance to Cafey Goat"
               className="hero-image"
-              src="/cafey-goat-entrance.jpg"
+              src={entranceImage}
             />
             <div className="rating-card">
               <div className="rating-stars" aria-label="4.8 out of 5 stars">
@@ -105,13 +128,20 @@ function App() {
 
         <div className="marquee" aria-label="Cafe highlights">
           <div className="marquee-track">
-            <span>Specialty coffee</span><i />
-            <span>All-day breakfast</span><i />
-            <span>Fresh bakes</span><i />
-            <span>Good mood food</span><i />
-            <span>Specialty coffee</span><i />
-            <span>All-day breakfast</span><i />
-            <span>Fresh bakes</span><i />
+            <span>Specialty coffee</span>
+            <i />
+            <span>All-day breakfast</span>
+            <i />
+            <span>Fresh bakes</span>
+            <i />
+            <span>Good mood food</span>
+            <i />
+            <span>Specialty coffee</span>
+            <i />
+            <span>All-day breakfast</span>
+            <i />
+            <span>Fresh bakes</span>
+            <i />
           </div>
         </div>
 
@@ -119,7 +149,11 @@ function App() {
           <div className="section-heading">
             <div>
               <Eyebrow>From the kitchen & bar</Eyebrow>
-              <h2>Made for every kind<br />of craving.</h2>
+              <h2>
+                Made for every kind
+                <br />
+                of craving.
+              </h2>
             </div>
             <p>
               Familiar flavours, made with care. From the first espresso of the
@@ -130,7 +164,11 @@ function App() {
             {categories.map((category) => (
               <button
                 aria-pressed={activeCategory === category}
-                className={activeCategory === category ? "category-tab category-tab--active" : "category-tab"}
+                className={
+                  activeCategory === category
+                    ? "category-tab category-tab--active"
+                    : "category-tab"
+                }
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 type="button"
@@ -143,8 +181,15 @@ function App() {
             {filteredItems.map((item) => (
               <article className="menu-card" key={item.name}>
                 <div className="menu-card-image-wrap">
-                  <img alt={item.name} className="menu-card-image" loading="lazy" src={item.image} />
-                  {item.badge && <span className="menu-badge">{item.badge}</span>}
+                  <img
+                    alt={item.name}
+                    className="menu-card-image"
+                    loading="lazy"
+                    src={item.image}
+                  />
+                  {item.badge && (
+                    <span className="menu-badge">{item.badge}</span>
+                  )}
                 </div>
                 <div className="menu-card-body">
                   <div className="menu-card-title">
@@ -177,15 +222,19 @@ function App() {
           </div>
           <div className="story-copy">
             <Eyebrow light>Our little corner</Eyebrow>
-            <h2>A café with<br />a point of view.</h2>
+            <h2>
+              A café with
+              <br />a point of view.
+            </h2>
             <p className="story-lead">
               Cafey Goat was made for the in-between moments: the quick morning
-              coffee that becomes a long chat, the working lunch that turns into cake.
+              coffee that becomes a long chat, the working lunch that turns into
+              cake.
             </p>
             <p>
-              We care about what goes in the cup, but just as much about what happens
-              around it. Expect thoughtful coffee, generous food and a team that
-              remembers your usual.
+              We care about what goes in the cup, but just as much about what
+              happens around it. Expect thoughtful coffee, generous food and a
+              team that remembers your usual.
             </p>
             <TextLink href="#visit">Come say hello</TextLink>
           </div>
@@ -194,26 +243,39 @@ function App() {
         <section className="section values-section">
           <div className="values-intro">
             <Eyebrow>The goat standard</Eyebrow>
-            <h2>Simple things,<br />done properly.</h2>
+            <h2>
+              Simple things,
+              <br />
+              done properly.
+            </h2>
           </div>
           <div className="values-grid">
             <article>
               <span>01</span>
               <Coffee aria-hidden="true" />
               <h3>Serious about coffee</h3>
-              <p>Balanced espresso, careful brewing, and beans chosen for character.</p>
+              <p>
+                Balanced espresso, careful brewing, and beans chosen for
+                character.
+              </p>
             </article>
             <article>
               <span>02</span>
               <Sparkles aria-hidden="true" />
               <h3>Fresh, all day</h3>
-              <p>Breakfast through dinner, prepared in small batches with good produce.</p>
+              <p>
+                Breakfast through dinner, prepared in small batches with good
+                produce.
+              </p>
             </article>
             <article>
               <span>03</span>
               <MapPin aria-hidden="true" />
               <h3>Made for the neighbourhood</h3>
-              <p>A warm, easygoing room for solo coffee, families, friends, and laptops.</p>
+              <p>
+                A warm, easygoing room for solo coffee, families, friends, and
+                laptops.
+              </p>
             </article>
           </div>
         </section>
@@ -221,11 +283,17 @@ function App() {
         <section className="reviews-section" id="reviews">
           <div className="reviews-heading">
             <Eyebrow light>Kind words</Eyebrow>
-            <h2>From our<br />regulars.</h2>
+            <h2>
+              From our
+              <br />
+              regulars.
+            </h2>
             <div className="big-rating">
               <span>4.8</span>
               <div>
-                <div aria-hidden="true" className="stars">★★★★★</div>
+                <div aria-hidden="true" className="stars">
+                  ★★★★★
+                </div>
                 <p>Based on guest reviews</p>
               </div>
             </div>
@@ -247,14 +315,20 @@ function App() {
         <section className="visit-section" id="visit">
           <div className="visit-copy">
             <Eyebrow>Drop by</Eyebrow>
-            <h2>There’s always<br />room for one more.</h2>
+            <h2>
+              There’s always
+              <br />
+              room for one more.
+            </h2>
             <div className="visit-detail">
               <MapPin aria-hidden="true" />
               <div>
                 <strong>Dollars Colony</strong>
                 <p>
-                  Shakamabari Apartments, 19, 1st Main Road,<br />
-                  near Bank of Baroda, RMV 2nd Stage,<br />
+                  Shakamabari Apartments, 19, 1st Main Road,
+                  <br />
+                  near Bank of Baroda, RMV 2nd Stage,
+                  <br />
                   Bengaluru, Karnataka 560094
                 </p>
               </div>
@@ -267,12 +341,12 @@ function App() {
               </div>
             </div>
             <div className="visit-actions">
-              <Button
-                href="https://maps.google.com/?q=Cafey+Goat+Dollars+Colony+Bengaluru"
-              >
+              <Button href="https://maps.google.com/?q=Cafey+Goat+Dollars+Colony+Bengaluru">
                 Get directions <ArrowRight aria-hidden="true" size={18} />
               </Button>
-              <Button href="tel:+918095967543" variant="ghost">Call the café</Button>
+              <Button href="tel:+918095967543" variant="ghost">
+                Call the café
+              </Button>
             </div>
           </div>
           <div className="map-card">
@@ -291,7 +365,10 @@ function App() {
         <div className="footer-top">
           <Wordmark light />
           <p>The neighbrew-hood coffee spot.</p>
-          <a aria-label="Cafey Goat on Instagram" href="https://www.instagram.com/cafeygoat/">
+          <a
+            aria-label="Cafey Goat on Instagram"
+            href="https://www.instagram.com/cafeygoat/"
+          >
             <Instagram aria-hidden="true" />
           </a>
         </div>
@@ -306,7 +383,11 @@ function App() {
         <div aria-live="polite" className="toast" role="status">
           <Coffee aria-hidden="true" />
           <span>{notice}</span>
-          <button aria-label="Dismiss message" onClick={() => setNotice(null)} type="button">
+          <button
+            aria-label="Dismiss message"
+            onClick={() => setNotice(null)}
+            type="button"
+          >
             <X size={17} />
           </button>
         </div>
